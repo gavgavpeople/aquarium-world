@@ -1,0 +1,25 @@
+<%-include('partials/header')%>
+<section class="hero">
+  <h1 class="greeting">Welcome to Aquarium World</h1>
+  <p class="tagline">Dive in and explore amazing marine life from sunny coral reefs to the deep ocean! Enjoy fun hands-on exhibits, meet incredible creatures, and discover how to protect our waters together.</p>
+
+  <div class="opening-times">
+    <h2>Opening times</h2>
+    <p>Open every day, <time datetime="09:00">9am</time> – <time datetime="18:00">6pm</time></p>
+  </div>
+</section>
+
+<section class="zones">
+  <h2 class="zones-title">Explore our zones</h2>
+  <div class="zone-grid">
+    <% zones.forEach(zone => { %>
+      <article class="zone-card">
+        <h3><%= zone.name %></h3>
+        <p><%= zone.description %></p>
+        <a class="button" href="/zone/<%= zone.slug %>">Explore <%= zone.name %></a>
+      </article>
+    <% }) %>
+  </div>
+</section>
+
+<%-include('partials/footer')%>

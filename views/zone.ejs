@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+<h1><%= zone.name %></h1>
+<p><%= zone.description %></p>
+
+<h2>Exhibitions</h2>
+<% exhibitions.forEach(exhibition => { %>
+  <article>
+    <h3><%= exhibition.name %></h3>
+    <p><%= exhibition.type %></p>
+    <p><%= exhibition.description %></p>
+  </article>
+<% }) %>
+
+<%- include('partials/footer') %>
