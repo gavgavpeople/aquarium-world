@@ -41,6 +41,16 @@ h1, h2, h3 {
   line-height: 1.2;
 }
 
+.opening-banner {
+  max-width: none;
+  margin: 0;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #acdbf7;
+  background: var(--navy);
+}
+
 .logo {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.9rem;
@@ -414,4 +424,29 @@ p {
     animation: none;
     transition: none;
   }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.search input {
+  width: 100%;
+  max-width: 30rem;
+  padding: 0.6rem 1rem;
+  font: inherit;
+  border: 2px solid var(--sea-glass);
+  border-radius: 2rem;
+}
+
+#search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 30rem;
 }

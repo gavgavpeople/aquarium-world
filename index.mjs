@@ -53,6 +53,21 @@ app.post("/contact", async (req, res) => {
   res.render("contact", { submitted: true });
 });
 
+app.get("/api/search", async (req, res) => {
+  const query = (req.query.q || "").trim();
+  if (!query) return res.json([]);
+
+  const results = await all(
+    `SELECT exhibitions.name, zones.name AS zone_name, zones.slug
+     FROM exhibitions
+     JOIN zones ON exhibitions.zone_id = zones.id
+     WHERE exhibitions.name LIKE ? OR exhibitions.description LIKE ?
+     LIMIT 10`,
+    [`%${query}%`, `%${query}%`]
+  );
+  res.json(results);
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

@@ -47,3 +47,25 @@ if (rocks.length > 0) {
     });
   });
 }
+
+const input = document.getElementById("search");
+
+if (input) {
+  const resultsList = document.getElementById("search-results");
+
+  input.addEventListener("input", async () => {
+    const response = await fetch(`/api/search?q=${encodeURIComponent(input.value)}`);
+    const results = await response.json();
+
+    resultsList.innerHTML = "";
+
+    results.forEach(result => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = `/zone/${result.slug}`;
+      link.textContent = `${result.name} (${result.zone_name})`;
+      item.appendChild(link);
+      resultsList.appendChild(item);
+    });
+  });
+}
