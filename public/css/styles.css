@@ -224,9 +224,9 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bubble {
+  .bubble,
+  .creature {
     animation: none;
-    opacity: 0;
   }
 }
 
@@ -305,3 +305,113 @@ p {
   }
 }
 
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.kids-activity h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--navy);
+}
+
+.kids-activity > p {
+  margin: 0 auto;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.rockpool {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.rock-spot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 12rem;
+  padding: 1rem;
+  border: 3px solid #fff;
+  border-radius: 1.5rem;
+}
+
+.rock-spot:nth-child(1) { background: #FFB3CF; }
+.rock-spot:nth-child(2) { background: #FFE27A; }
+.rock-spot:nth-child(3) { background: #8FD3FF; }
+.rock-spot:nth-child(4) { background: #9BE3A0; }
+.rock-spot:nth-child(5) { background: #FF9C8F; }
+.rock-spot:nth-child(6) { background: #C9B3FF; }
+
+.rock {
+  font-size: 5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.rock:hover {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.creature {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 5rem;
+  gap: 0 0.75rem;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1rem;
+  animation: pop-in 0.4s ease-out;
+}
+
+.creature[hidden] {
+  display: none;
+}
+
+.creature h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--navy);
+}
+
+.creature p {
+  grid-column: 1;
+  margin: 0.5rem 0 0;
+  font-size: 1.15rem;
+}
+
+.creature img {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+#found-count {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: #FFE27A;
+  border-radius: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .creature,
+  .rock {
+    animation: none;
+    transition: none;
+  }
+}

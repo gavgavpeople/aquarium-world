@@ -28,3 +28,22 @@ if (contactForm) {
   });
 }
 
+const rocks = document.querySelectorAll(".rock");
+const foundCount = document.getElementById("found-count");
+let found = 0;
+if (rocks.length > 0) {
+  rocks.forEach(rock => {
+    rock.addEventListener("click", () => {
+      if (!rock.classList.contains("found")) {
+        rock.classList.add("found");
+        found++;
+        foundCount.textContent = `You found ${found} of ${rocks.length} creatures.`;
+        rock.nextElementSibling.hidden = false;
+        rock.hidden = true;
+        if (found === rocks.length) {
+          foundCount.textContent = `Well done! You found all ${rocks.length} creatures!`;
+        }
+      }
+    });
+  });
+}
