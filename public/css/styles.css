@@ -141,6 +141,26 @@ p {
   color: var(--navy);
 }
 
+.highlights li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.highlights {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.icon {
+  font-size: 1.4rem;
+}
+
 .bubble {
   position: absolute;
   bottom: -1.5rem;
@@ -216,10 +236,26 @@ p {
 }
 
 .zone-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   margin-top: 2rem;
+}
+
+.zone-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.zone-row img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 16rem;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
 .zone-card {
@@ -256,4 +292,43 @@ p {
 
 .button:hover {
   background: var(--deep-teal);
+}
+
+@media (max-width: 768px) {
+  .zone-row {
+    grid-template-columns: 1fr;
+  }
+
+  .zone-row img {
+    height: 12rem;
+    min-height: 0;
+  }
+}
+
+.ticket-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 100;
+  padding: 0.8rem 1.4rem;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-float:hover {
+  background: var(--deep-teal);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

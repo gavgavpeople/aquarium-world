@@ -9,17 +9,40 @@
   </div>
 </section>
 
+
+<ul class="highlights" role="list">
+  <li><span class="icon" aria-hidden="true">👨‍👩‍👧</span> Family friendly</li>
+  <li><span class="icon" aria-hidden="true">♿</span> Step-free access</li>
+  <li><span class="icon" aria-hidden="true">☕</span> Café on site</li>
+</ul>
+
 <section class="zones">
   <h2 class="zones-title">Explore our zones</h2>
   <div class="zone-grid">
     <% zones.forEach(zone => { %>
-      <article class="zone-card">
-        <h3><%= zone.name %></h3>
-        <p><%= zone.description %></p>
-        <a class="button" href="/zone/<%= zone.slug %>">Explore <%= zone.name %></a>
-      </article>
+      <div class="zone-row">
+        <article class="zone-card">
+          <h3><%= zone.name %></h3>
+          <p><%= zone.description %></p>
+          <a class="button" href="/zone/<%= zone.slug %>">Explore <%= zone.name %></a>
+        </article>
+        <img src="/images/<%= zone.slug %>.jpg" alt="<%= zone.name %> zone">
+      </div>
     <% }) %>
   </div>
 </section>
+
+<section class="cafe">
+  <h2 class="zones-title">Our café</h2>
+  <div class="zone-row">
+    <article class="zone-card">
+      <h3>Reef Café</h3>
+      <p>Take a break with hot drinks, fresh snacks and a kids' menu, with views of our coral reef tank. Open 9am – 5:30pm.</p>
+    </article>
+    <img src="/images/cafe.jpg" alt="Aquarium café seating area">
+  </div>
+</section>
+
+<section class="tickets" id="tickets"></section>
 
 <%-include('partials/footer')%>
