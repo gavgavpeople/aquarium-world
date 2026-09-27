@@ -332,3 +332,37 @@ html {
     scroll-behavior: auto;
   }
 }
+
+.ticket-float {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.ticket-dialog {
+  width: 90%;
+  max-width: 28rem;
+  padding: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  background: var(--surface-light);
+  color: var(--deep-teal);
+}
+
+.ticket-dialog::backdrop {
+  background: rgba(26, 43, 76, 0.5);
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 1rem;
+}
+
+.ticket-form input {
+  padding: 0.5rem;
+  font: inherit;
+  border: 1px solid var(--sea-glass);
+  border-radius: 0.5rem;
+}
