@@ -17,6 +17,11 @@ app.get("/", async (req, res) => {
 app.get("/faq", (req, res) => {
     res.render("faq");
 });
+
+app.get("/activity", (req, res) => {
+    res.render("activity");
+});
+
 app.get("/zone/:slug", async (req, res) => {
     const zone = await get("SELECT * FROM zones WHERE slug = ?", [req.params.slug]);
     if (!zone) {
