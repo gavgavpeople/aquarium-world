@@ -3,42 +3,6 @@
     <p>Open every day, 9am - 6pm.</p>
 </footer>
 
-<button type="button" class="ticket-float" id="ticket-open">
-  <span aria-hidden="true">🎟️</span> Tickets
-</button>
-
-<dialog id="ticket-dialog" class="ticket-dialog" aria-labelledby="ticket-title">
-  <h2 id="ticket-title">Book tickets</h2>
-  <p>Open every day, 9am – 6pm. Tickets are valid all day.</p>
-  <table class="price-table">
-    <tr><th scope="col">Ticket</th><th scope="col">Price</th></tr>
-    <tr><td>Adult</td><td>£22</td></tr>
-    <tr><td>Child (3–15)</td><td>£16</td></tr>
-    <tr><td>Under 3</td><td>Free</td></tr>
-    <tr><td>Family (2 adults + 2 children)</td><td>£65</td></tr>
-  </table>
-  <form id="ticket-form" class="ticket-form">
-  <label for="t-name">Full name</label>
-  <input type="text" id="t-name" name="name" autocomplete="name" required>
-
-  <label for="t-email">Email</label>
-  <input type="email" id="t-email" name="email" autocomplete="email" required>
-
-  <label for="t-date">Visit date</label>
-  <input type="date" id="t-date" name="visit_date" required>
-
-  <label for="t-adults">Adults</label>
-  <input type="number" id="t-adults" name="adults" min="0" max="10" value="1" required>
-
-  <label for="t-children">Children (3–15)</label>
-  <input type="number" id="t-children" name="children" min="0" max="10" value="0" required>
-
-  <button type="submit" class="button">Book tickets</button>
-  <p id="ticket-message" role="status"></p>
-</form>
-  <button type="button" class="button" id="ticket-close">Close</button>
-</dialog>
-
 <script src="/js/main.js"></script>
 </body>
 </html>
